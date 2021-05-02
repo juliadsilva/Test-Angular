@@ -1,0 +1,30 @@
+<mat-toolbar color="warn">
+    <form #radioForm="ngForm">
+        <mat-toolbar color="warn">
+            <input type="radio" value="1" name="tipo" ngModel required #tipo="ngModel"> Exemplo 01
+            <input type="radio" value="2" name="tipo" ngModel required #tipo="ngModel"> Exemplo 02
+        </mat-toolbar>
+    </form>
+    <button mat-icon-button color="warn" (click)="mostraUsuario(radioForm)">
+            <mat-icon>search</mat-icon>
+        </button>
+</mat-toolbar>
+
+<div class="container ">
+    <div fxLayout="row wrap " fxLayoutGap="16px ">
+        <form *ngFor="let usuario of usuarios; ">
+            <mat-card class="mat-elevation-z4 center ">
+                <mat-card-title-group>
+                    <mat-card-title id="nomeId" value="{{usuario.nome}}">{{usuario.nome}}</mat-card-title>
+                    <mat-card-subtitle id="emailId" value="{{usuario.nome}}">{{usuario.email}}</mat-card-subtitle>
+                </mat-card-title-group>
+                <label>Frase:</label>
+                <mat-card-content id="msgId" value="{{usuario.nome}}">{{usuario.msg}}</mat-card-content>
+                <label>Cor:</label>
+                <mat-card-content id="corId" value="{{usuario.nome}}">{{usuario.cor}}</mat-card-content>
+                <label>Musica:</label>
+                <mat-card-content id="musicaId" value="{{usuario.nome}}">{{usuario.musica}}</mat-card-content>
+            </mat-card>
+        </form>
+    </div>
+</div>
