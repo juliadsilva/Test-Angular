@@ -1,3 +1,13 @@
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/juliadsilva/Test-Angular?style=social">
+
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/juliadsilva/Test-Angular?style=social">
+  
+  <a href="https://github.com/juliadsilva/Deep-Analisys/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/juliadsilva/Test-Angular?style=social">
+  </a>
+</p>
+
 <h2 align="center"> 
  Teste de Unidade Angular
 </h2>
