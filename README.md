@@ -23,7 +23,7 @@
 ### Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina a seguinte ferramenta:
-- Angular 6 - Framework web responsável pelo front-end.
+- Angular 11 
 
 #### Instalação
 
