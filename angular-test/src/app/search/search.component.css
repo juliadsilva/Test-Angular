@@ -1,7 +1,7 @@
 mat-toolbar {
     margin: 1rem;
     padding: 1rem;
-    width: 40rem;
+    width: 90rem;
 }
 
 input {
@@ -11,7 +11,7 @@ input {
 
 label {
     font-size: 17px;
-    color: rgb(216, 74, 9);
+    color: rgba(228, 76, 6, 0.795);
 }
 
 .card {
@@ -22,8 +22,9 @@ label {
 }
 
 .title {
-    color: grey;
-    font-size: 18px;
+    color: rgb(255, 0, 0);
+    font-size: 19px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .card-text {

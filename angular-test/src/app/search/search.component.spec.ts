@@ -44,12 +44,6 @@ describe('SearchComponent', () => {
       }
     ));
 
-    it('Usuario nulo', inject([UsuariosService],
-      (service: UsuariosService) => {
-        expect(service.getUsurioNulo()).toBeDefined()
-      }
-    ));
-
     it('Usuario um', inject([UsuariosService],
       (service: UsuariosService) => {
         expect(service.getUsuario(1)).toBeDefined()
@@ -76,9 +70,9 @@ describe('SearchComponent', () => {
     });
 
     it('Card em branco', () => {
-      const userSearchService = {
-        nome: 'Nome',
-        email: 'E-mail',
+      const userWhite = {
+        nome: '',
+        email: '',
         msg: '',
         cor: '',
         musica: ''
@@ -91,7 +85,7 @@ describe('SearchComponent', () => {
         cor: fixture.debugElement.nativeElement.querySelector('#corId').textContent,
         musica: fixture.debugElement.nativeElement.querySelector('#musicaId').textContent
       }
-      expect(userSearchService).toEqual(userSearch);
+      expect(userSearch).toEqual(userWhite);
     });
 
     it('Card com o usuario correto exemplo 01', fakeAsync(() => {

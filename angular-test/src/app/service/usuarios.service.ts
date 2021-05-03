@@ -7,16 +7,7 @@ import { Injectable } from '@angular/core';
 export class UsuariosService {
 
   // Simulação do banco de dados com um vetor de baralho
-  usuarioNulo = 
-    {
-      nome: 'Nome',
-      email: 'E-mail',
-      msg: '',
-      cor: '',
-      musica: ''
-    };
-  
-  usuarioUm = 
+   usuarioUm = 
     {
       nome: 'Exemplo01',
       email: 'ex@exemplo.com',
@@ -36,16 +27,10 @@ export class UsuariosService {
 
   constructor() { }
 
-  getUsurioNulo(){
-    return this.usuarioNulo;
-  }
-
   getUsuario(n: number){
     if (n == 1)
       return this.usuarioUm;
-    else if (n == 2)
-      return this.usuarioDois;
     else
-      return this.getUsurioNulo;
+      return this.usuarioDois;
   }
 }
