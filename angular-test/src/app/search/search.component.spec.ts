@@ -1,6 +1,7 @@
-import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, inject, TestBed, tick } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search.component';
+import { UsuariosService } from '../service/usuarios.service';
 import userEvent from '@testing-library/user-event'
 
 describe('SearchComponent', () => {
@@ -10,9 +11,9 @@ describe('SearchComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [FormsModule],
-      declarations: [ SearchComponent ]
+      declarations: [SearchComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -30,6 +31,11 @@ describe('SearchComponent', () => {
     it('Componente criado', () => {
       expect(component).toBeTruthy();
     });
+
+    it('Conexão com o service', inject([UsuariosService],
+      (service: UsuariosService) => {
+        expect(service).toBeTruthy();
+      }));
 
     it('Radio button', () => {
       const radio = fixture.debugElement.nativeElement.querySelector('input[type="radio"]');
@@ -117,5 +123,9 @@ describe('SearchComponent', () => {
         expect(userSearchService).toEqual(userSearch);
       });
     }));
+
+ 
   });
 });
+
+
