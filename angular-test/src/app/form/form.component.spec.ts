@@ -1,8 +1,7 @@
-import { async, ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { FormComponent } from './form.component';
 import userEvent from '@testing-library/user-event'
-import { SyncAsync } from '@angular/compiler/src/util';
 
 describe('FormComponent', () => {
   let component: FormComponent;
@@ -53,38 +52,7 @@ describe('FormComponent', () => {
       expect(userSearchService).toEqual(userSearch);
     });
 
-    it('Card com o usuario correto exemplo 02', (done) => {
-
-      const userSearchService = {
-        nome: 'Exemplo02',
-        email: 'exdois@exemplo.com',
-        msg: 'A persistência é o caminho do êxito',
-        cor: 'Vermelho',
-        musica: 'Rock'
-      };
-
-      const radio = fixture.debugElement.nativeElement.querySelector('#radio2');
-      const button = fixture.debugElement.nativeElement.querySelector('#searchButton');
-
-      radio.checked = true;
-      userEvent.click(button);
-      fixture.detectChanges();
-
-      fixture.whenStable().then(() => {
-
-        const userSearch = {
-          nome: fixture.debugElement.nativeElement.querySelector('#nomeId').textContent,
-          email: fixture.debugElement.nativeElement.querySelector('#emailId').emailSearch.textContent,
-          msg: fixture.debugElement.nativeElement.querySelector('#msgId').textContent,
-          cor: fixture.debugElement.nativeElement.querySelector('#corId').textContent,
-          musica: fixture.debugElement.nativeElement.querySelector('#musicaId').textContent
-        }
-        expect(userSearchService).toEqual(userSearch);
-      });
-      done();
-    });
-
-    it('Card com o usuario correto exemplo 01', fakeAsync(()=> {
+    it('Card com o usuario correto exemplo 01', () => {
 
       const userSearchService = {
         nome: 'Exemplo01',
@@ -110,9 +78,38 @@ describe('FormComponent', () => {
           cor: fixture.debugElement.nativeElement.querySelector('#corId').textContent,
           musica: fixture.debugElement.nativeElement.querySelector('#musicaId').textContent
         }
-        fixture.detectChanges();
         expect(userSearchService).toEqual(userSearch);
       });
-    }));
+    });
+
+    it('Card com o usuario correto exemplo 02', () => {
+
+      const userSearchService = {
+        nome: 'Exemplo02',
+        email: 'exdois@exemplo.com',
+        msg: 'A persistência é o caminho do êxito',
+        cor: 'Vermelho',
+        musica: 'Rock'
+      };
+
+      const radio = fixture.debugElement.nativeElement.querySelector('#radio2');
+      const button = fixture.debugElement.nativeElement.querySelector('#searchButton');
+
+      radio.checked = true;
+      userEvent.click(button);
+      fixture.detectChanges();
+
+      fixture.whenStable().then(() => {
+
+        const userSearch = {
+          nome: fixture.debugElement.nativeElement.querySelector('#nomeId').textContent,
+          email: fixture.debugElement.nativeElement.querySelector('#emailId').textContent,
+          msg: fixture.debugElement.nativeElement.querySelector('#msgId').textContent,
+          cor: fixture.debugElement.nativeElement.querySelector('#corId').textContent,
+          musica: fixture.debugElement.nativeElement.querySelector('#musicaId').textContent
+        }
+        expect(userSearchService).toEqual(userSearch);
+      });
+    });
   });
 });
