@@ -19,7 +19,7 @@ export class UsuariosService {
     {
       nome: 'Exemplo01',
       email: 'ex@exemplo.com',
-      msg: 'A persistência é o caminho do êxito',
+      msg: 'No fim tudo dá certo, e se não deu certo é porque ainda não chegou ao fim',
       cor: 'Azul',
       musica: 'Pop'
     };
@@ -28,7 +28,7 @@ export class UsuariosService {
     {
       nome: 'Exemplo02',
       email: 'exdois@exemplo.com',
-      msg: 'A persistência é o caminho do êxito',
+      msg: 'Não crie limites para si mesmo. Você deve ir tão longe quanto sua mente permitir. O que você mais quer pode ser conquistado',
       cor: 'Vermelho',
       musica: 'Rock'
     };

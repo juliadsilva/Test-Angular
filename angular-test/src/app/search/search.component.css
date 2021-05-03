@@ -1,0 +1,35 @@
+mat-toolbar {
+    margin: 1rem;
+    padding: 1rem;
+    width: 40rem;
+}
+
+input {
+    margin: 1rem;
+    width: 22rem;
+}
+
+label {
+    font-size: 17px;
+    color: rgb(216, 74, 9);
+}
+
+.container {
+    padding-left: 30%;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+.title {
+    color: grey;
+    font-size: 18px;
+}
+
+.card-text {
+    font-size: 15px;
+}

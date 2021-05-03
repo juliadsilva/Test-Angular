@@ -12,19 +12,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatRadioModule } from '@angular/material/radio';
 
-
 // Componentes
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormComponent } from './form/form.component';
+import { SearchComponent } from './search/search.component';
 
 // Service
 import { UsuariosService } from './service/usuarios.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent
+    SearchComponent
   ],
   imports: [
     BrowserModule,  

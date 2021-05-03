@@ -1,0 +1,22 @@
+<mat-toolbar color="warn">
+    <form #radioForm="ngForm">
+        <mat-toolbar color="warn">
+            <input id="radio1" type="radio" value="1" name="tipo" ngModel required #tipo="ngModel"> Exemplo 01
+            <input id="radio2" type="radio" value="2" name="tipo" ngModel required #tipo="ngModel"> Exemplo 02
+        </mat-toolbar>
+    </form>
+    <button mat-icon-button color="warn" id="searchButton" (click)="mostraUsuario(radioForm)">
+            <mat-icon>search</mat-icon>
+    </button>
+</mat-toolbar>
+
+<div class="card">
+    <h1 id="nomeId">{{usuario.nome}}</h1>
+    <p class="title" id="emailId">{{usuario.email}}</p>
+    <label>Frase:</label>
+    <h6 class="card-text mb-2 text-center" id="msgId">{{usuario.msg}}</h6>
+    <label>Cor:</label>
+    <h6 class="card-text mb-2 text-center" id="corId">{{usuario.cor}}</h6>
+    <label>Musica:</label>
+    <h6 class="card-text mb-2 text-center" id="musicaId">{{usuario.musica}}</h6>
+</div>

@@ -1,24 +1,28 @@
-import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { FormComponent } from './form.component';
+import { SearchComponent } from './search.component';
 import userEvent from '@testing-library/user-event'
 
-describe('FormComponent', () => {
-  let component: FormComponent;
-  let fixture: ComponentFixture<FormComponent>;
+describe('SearchComponent', () => {
+  let component: SearchComponent;
+  let fixture: ComponentFixture<SearchComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [FormsModule],
-      declarations: [FormComponent]
+      declarations: [ SearchComponent ]
     })
-      .compileComponents();
+    .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FormComponent);
+    fixture = TestBed.createComponent(SearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  });
+
+  it('Componete busca criado', () => {
+    expect(component).toBeTruthy();
   });
 
   describe('Testes Unitários', () => {
@@ -52,12 +56,12 @@ describe('FormComponent', () => {
       expect(userSearchService).toEqual(userSearch);
     });
 
-    it('Card com o usuario correto exemplo 01', () => {
+    it('Card com o usuario correto exemplo 01', fakeAsync(() => {
 
       const userSearchService = {
         nome: 'Exemplo01',
         email: 'ex@exemplo.com',
-        msg: 'A persistência é o caminho do êxito',
+        msg: 'No fim tudo dá certo, e se não deu certo é porque ainda não chegou ao fim',
         cor: 'Azul',
         musica: 'Pop'
       };
@@ -78,16 +82,17 @@ describe('FormComponent', () => {
           cor: fixture.debugElement.nativeElement.querySelector('#corId').textContent,
           musica: fixture.debugElement.nativeElement.querySelector('#musicaId').textContent
         }
+        tick(3000);
         expect(userSearchService).toEqual(userSearch);
       });
-    });
+    }));
 
-    it('Card com o usuario correto exemplo 02', () => {
+    it('Card com o usuario correto exemplo 02', fakeAsync(() => {
 
       const userSearchService = {
         nome: 'Exemplo02',
         email: 'exdois@exemplo.com',
-        msg: 'A persistência é o caminho do êxito',
+        msg: 'Não crie limites para si mesmo. Você deve ir tão longe quanto sua mente permitir. O que você mais quer pode ser conquistado',
         cor: 'Vermelho',
         musica: 'Rock'
       };
@@ -108,8 +113,9 @@ describe('FormComponent', () => {
           cor: fixture.debugElement.nativeElement.querySelector('#corId').textContent,
           musica: fixture.debugElement.nativeElement.querySelector('#musicaId').textContent
         }
+        tick(3000);
         expect(userSearchService).toEqual(userSearch);
       });
-    });
+    }));
   });
 });
