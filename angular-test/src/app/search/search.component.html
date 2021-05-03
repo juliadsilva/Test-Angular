@@ -1,8 +1,8 @@
 <mat-toolbar color="warn">
     <form #radioForm="ngForm">
         <mat-toolbar color="warn">
-            <input id="radio1" type="radio" value="1" name="tipo" ngModel required #tipo="ngModel"> Exemplo 01
-            <input id="radio2" type="radio" value="2" name="tipo" ngModel required #tipo="ngModel"> Exemplo 02
+            <input id="radio1" type="radio" value="1" name="tipo" [ngModel]="radio" required #tipo="ngModel"> Exemplo 01
+            <input id="radio2" type="radio" value="2" name="tipo" [ngModel]="radio" required #tipo="ngModel"> Exemplo 02
         </mat-toolbar>
     </form>
     <button mat-icon-button color="warn" id="searchButton" (click)="mostraUsuario(radioForm)">

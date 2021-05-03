@@ -10,9 +10,8 @@ import { NgForm } from '@angular/forms';
 export class SearchComponent implements OnInit {
 
   usuario: any= [];
-
   radio: number;
- 
+
   constructor(private usuariosService: UsuariosService) {}
   
   // Acontece antes da tela ser desenhada
@@ -21,16 +20,8 @@ export class SearchComponent implements OnInit {
   }
   
   mostraUsuario(form: NgForm){
-    this.radio = form.controls['tipo'].value;
-    
-    if(this.radio == 1){
-      this.usuario = this.usuariosService.getUsuarioUm();
-     } else if(this.radio == 2){
-      this.usuario = this.usuariosService.getUsuarioDois();
-     }     
-     else {
-      this.usuario = this.usuariosService.getUsurioNulo();
-     }
+    this.radio = form.controls['tipo']?.value;
+    this.usuario = this.usuariosService.getUsuario(this.radio)
   }
 }
 

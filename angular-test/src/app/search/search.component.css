@@ -14,10 +14,6 @@ label {
     color: rgb(216, 74, 9);
 }
 
-.container {
-    padding-left: 30%;
-}
-
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;

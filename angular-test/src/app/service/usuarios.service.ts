@@ -1,3 +1,4 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -39,11 +40,12 @@ export class UsuariosService {
     return this.usuarioNulo;
   }
 
-  getUsuarioUm(){
-    return this.usuarioUm;
-  }
-
-  getUsuarioDois(){
-    return this.usuarioDois;
+  getUsuario(n: number){
+    if (n == 1)
+      return this.usuarioUm;
+    else if (n == 2)
+      return this.usuarioDois;
+    else
+      return this.getUsurioNulo;
   }
 }
