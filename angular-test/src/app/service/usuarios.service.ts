@@ -6,44 +6,44 @@ import { Injectable } from '@angular/core';
 export class UsuariosService {
 
   // Simulação do banco de dados com um vetor de baralho
-  usuariosNulo = [
+  usuarioNulo = 
     {
       nome: 'Nome',
       email: 'E-mail',
       msg: '',
       cor: '',
       musica: ''
-    },
-  ];
-
-  usuarios = [
+    };
+  
+  usuarioUm = 
     {
       nome: 'Exemplo01',
       email: 'ex@exemplo.com',
       msg: 'A persistência é o caminho do êxito',
       cor: 'Azul',
       musica: 'Pop'
-    },
+    };
+  
+    usuarioDois=
     {
       nome: 'Exemplo02',
       email: 'exdois@exemplo.com',
       msg: 'A persistência é o caminho do êxito',
       cor: 'Vermelho',
       musica: 'Rock'
-    },
-  ]
+    };
 
   constructor() { }
 
-  getUsuriosNulo():any[]{
-    return this.usuariosNulo;
+  getUsurioNulo(){
+    return this.usuarioNulo;
   }
 
-  getUsuarios():any[]{
-    return this.usuarios;
+  getUsuarioUm(){
+    return this.usuarioUm;
   }
 
-  getUsuariosByNome(nomeP:string){
-    return this.usuarios.filter(u => u.nome == nomeP);
+  getUsuarioDois(){
+    return this.usuarioDois;
   }
 }

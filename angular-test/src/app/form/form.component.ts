@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 })
 export class FormComponent {
 
-  usuarios: any[] = [];
+  usuario: any= [];
 
   radio: number;
  
@@ -17,16 +17,20 @@ export class FormComponent {
   
   // Acontece antes da tela ser desenhada
   ngOnInit(): void {
-    this.usuarios = this.usuariosService.getUsuriosNulo();
+    this.usuario = this.usuariosService.getUsurioNulo();
   }
   
   mostraUsuario(form: NgForm){
     this.radio = form.controls['tipo'].value;
+    
     if(this.radio == 1){
-      this.usuarios = this.usuariosService.getUsuariosByNome('Exemplo01');
-     } else{
-      this.usuarios = this.usuariosService.getUsuariosByNome('Exemplo02');
-     }      
+      this.usuario = this.usuariosService.getUsuarioUm();
+     } else if(this.radio == 2){
+      this.usuario = this.usuariosService.getUsuarioDois();
+     }     
+     else {
+      this.usuario = this.usuariosService.getUsurioNulo();
+     }
   }
 }
 
