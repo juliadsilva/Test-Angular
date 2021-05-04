@@ -44,7 +44,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina a seguinte f
     $ ng serve --open
 
     # Execute os testes
-    $ ng test --colors --watch
+    $ ng test --code-coverage
    ```
 ---
 
